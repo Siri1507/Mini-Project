@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pomodoro.css">
+    <title>Your Achievo App</title>
+</head>
+<body>
+    <div class="pomodoro-container">
+        <label for="taskName">Task Name:</label>
+        <input type="text" id="taskName" placeholder="Enter task name">
+        <div class="timer" id="timer">25:00</div>
+        <button class="start-btn" onclick="startPomodoro()">Start</button>
+        <button class="reset-btn" onclick="resetPomodoro()">Reset</button>
+        <button class="complete-btn" onclick="resetPomodoro()">Complete Task</button>
+    </div>
+    <div class="tomato">
+        <img src = "tomato.jpg"> 
+    </div>
+    <script src="pomodoro.js"></script>
+</body>
+</html>

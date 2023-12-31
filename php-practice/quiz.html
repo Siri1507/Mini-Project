@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General Knowledge Quizzes</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f8f8;
+        }
+
+        section {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        button {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section>
+        <h2>General Knowledge</h2>
+        <p>Test your knowledge with our first general knowledge quiz!</p>
+        <button onclick="startQuiz('https://www.sporcle.com/games/Tom_the_Terrible/telescoping-history?t=generalknowledge')">Start Quiz</button>
+    </section>
+
+    <section>
+        <h2>Crossword Time</h2>
+        <p>Challenge yourself with our crossword</p>
+        <button onclick="startQuiz('https://www.sporcle.com/games/SquidrisElba/a-z-crossword?t=crossword')">Start Quiz</button>
+    </section>
+
+    <section>
+        <h2>Numbers Time</h2>
+        <p>Can you solve this sudoku?</p>
+        <button onclick="startQuiz('https://www.sporcle.com/games/gazzso/sudoku-more-or-less?t=numbers')">Start Quiz</button>
+    </section>
+
+    <script>
+        function startQuiz(url) {
+            window.location.href = url;
+        }
+    </script>
+
+</body>
+
+</html>
+

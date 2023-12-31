@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study App - Profile</title>
+    <style>
+        body {
+            background-image: url("back.jpeg");
+            background-size: cover; /* Cover the entire viewport */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        section {
+            width: 60%;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 0 auto 20px;
+        }
+
+        .profile-picture img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .user-info,
+        .profile-details,
+        .statistics {
+            margin-top: 20px;
+        }
+
+        .study-calendar {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .day {
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 14px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .study-hours-1 {
+            background-color: #c8e6c9;
+        }
+
+        .study-hours-2 {
+            background-color: #a5d6a7;
+        }
+
+        .study-hours-3 {
+            background-color: #81c784;
+        }
+
+        .study-hours-4 {
+            background-color: #66bb6a;
+        }
+
+        .study-hours-5 {
+            background-color: #4caf50;
+            color: #fff;
+        }
+
+        .study-hours-6 {
+            background-color: #388e3c;
+            color: #fff;
+        }
+
+        .study-hours-7 {
+            background-color: #2e7d32;
+            color: #fff;
+        }
+
+        .study-hours-8 {
+            background-color: #1b5e20;
+            color: #fff;
+        }
+
+        .statistics {
+            text-align: left;
+        }
+
+        select {
+            padding: 8px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Profile Section -->
+    <section style = "background-color: 	#D4AF37;">
+        <div class="profile-picture">
+            <img src="profile.jpg" alt="Profile Picture">
+        </div>
+        <div class="user-info">
+            <h2>Rayapudi Sri Tulasi</h2>
+            <p>Email: Lasya@gmail.com</p>
+        </div>
+
+        <!-- Profile Details Section -->
+        <div class="profile-details" >
+            <h4>Profile Details</h4>
+            <p>Joined at: January 1, 2023</p>
+            <p class="ranking">Ranking: Gold</p>
+            <p class="points">Points: 500</p>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="statistics">
+        <h2>Statistics</h2>
+        <label for="monthSelect">Select Month:</label>
+        <select id="monthSelect">
+            <option value="January" selected>January</option>
+            <!-- Add other months here if needed -->
+        </select>
+        <div class="study-calendar" id="studyCalendar">
+            <!-- Study calendar days will be dynamically generated here using JavaScript -->
+        </div>
+    </section>
+
+    <script>
+        // Dynamically generate study calendar days with imaginary study times
+        function generateStudyCalendar(month) {
+            var studyCalendar = document.getElementById('studyCalendar');
+            studyCalendar.innerHTML = ''; // Clear previous content
+
+            for (var day = 1; day <= 30; day++) {
+                var studyHours = day % 8 + 1; // Imaginary study hours
+                var dayElement = document.createElement('div');
+                dayElement.className = 'day study-hours-' + studyHours;
+                dayElement.innerHTML = day + '<br>Study Time: ' + studyHours + ' hours';
+                studyCalendar.appendChild(dayElement);
+            }
+        }
+
+        // Add event listener for month selection
+        document.getElementById('monthSelect').addEventListener('change', function () {
+            var selectedMonth = this.value;
+            generateStudyCalendar(selectedMonth);
+        });
+
+        // Initial generation of study calendar for January
+        generateStudyCalendar('January');
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
